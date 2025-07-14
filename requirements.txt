@@ -1,0 +1,10 @@
+boto3==1.39.4
+minio==7.2.15
+apache-airflow>2.8.0
+python-dotenv==1.0.1
+pandas==2.3.1
+numpy==2.0.2
+matplotlib== 3.9.4
+pyarrow==20.0.0
+SQLAlchemy==1.4.54
+psycopg2-binary==2.9.10
