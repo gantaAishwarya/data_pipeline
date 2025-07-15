@@ -8,3 +8,4 @@ matplotlib== 3.9.4
 pyarrow==20.0.0
 SQLAlchemy==1.4.54
 psycopg2-binary==2.9.10
+pytest==8.4.1
