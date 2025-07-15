@@ -80,7 +80,7 @@ class TransformData:
             if "timestamp" in df.columns:
                 df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce", utc=True)
                 df = df.dropna(subset=["timestamp"])
-                df["timestamp"] = df["timestamp"].dt.floor("S").dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+                df["timestamp"] = df["timestamp"].dt.strftime("%Y-%m-%dT%H:%M:%SZ")
                 logger.info("Timestamp normalized to UTC ISO 8601 format")
             else:
                 logger.warning("Timestamp column missing. Skipping timestamp normalization.")
