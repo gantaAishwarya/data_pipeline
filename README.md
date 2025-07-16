@@ -1,4 +1,4 @@
-# Data Engineer - Simple ETL Pipeline
+# Simple ETL Pipeline
 
 ## Objective
 Build a simple ETL pipeline that ingests raw JSON logs, transforms the data into a clean format, models it into a star schema, and loads it into a relational database (PostgreSQL).
@@ -50,7 +50,6 @@ You can access the MinIO browser interface at:
 Login using the credentials provided in your .env file (typically MINIO_ACCESS_KEY and MINIO_SECRET_KEY).
 
 
-
 ## Requirements & Implementation Details
 
 1) Data Ingestion
@@ -99,9 +98,9 @@ Login using the credentials provided in your .env file (typically MINIO_ACCESS_K
         git clone https://github.com/gantaAishwarya/data_pipeline.git
         cd data_pipeline
 
-2) Build and start services with Docker Compose
+2) Start services with Docker Compose
 
-        docker-compose up --build
+        docker-compose up
 
 3) Access Airflow UI
 
@@ -118,3 +117,40 @@ Login using the credentials provided in your .env file (typically MINIO_ACCESS_K
 - Run tests with:
 
         pytest tests/
+
+
+## Successful Job Execution Overview
+
+Once the Airflow DAGs have run successfully, you can expect the following:
+
+### Airflow UI Snapshot
+
+![airflow Snapshot](images/airflow_screen.png)
+
+### Data Ingested into MinIO
+
+Raw and processed data will be available in MinIO buckets:
+
+![minio Snapshot](images/minio_data_ingesion.png)
+
+![minio_raw Snapshot](images/minio_raw_data.png)
+
+![minio_processed Snapshot](images/minio_processed_data.png)
+
+
+### Data in PostgreSQL
+
+Transformed data will be available in the respective Postgres tables:
+
+- dim_users Table
+
+    ![postgres_users Snapshot](images/postgres_dim_users.png)
+
+- dim_actions Table
+
+    ![postgres_actions Snapshot](images/postgres_dim_actions.png)
+
+- fact_user_actions Table
+
+    ![postgres_user_actions Snapshot](images/postgres_user_actions.png)
+
