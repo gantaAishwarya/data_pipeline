@@ -46,7 +46,7 @@ with DAG(
 
     load_data_task = PythonOperator(
         task_id='load_data',
-        python_callable=user_action_log_job.load_to_postgres,
+        python_callable=user_action_log_job.run_load,
     )
 
     # Define task dependencies
